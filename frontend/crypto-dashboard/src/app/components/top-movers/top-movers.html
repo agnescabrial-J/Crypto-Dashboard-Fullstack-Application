@@ -1,0 +1,45 @@
+<div class="movers-container">
+  <!-- GAINER -->
+  <div class="mover-card gainer">
+    <div class="mover-header">
+      <span class="badge success">▲ Top Gainer</span>
+    </div>
+
+    <div class="mover-body">
+      <div class="crypto-name">
+        {{ gainer?.name }}
+        <span class="symbol">({{ gainer?.symbol | uppercase }})</span>
+      </div>
+
+      <div class="price">
+        ${{ gainer?.current_price | number:'1.0-2' }}
+      </div>
+
+      <div class="change positive">
+        ▲ {{ gainer?.price_change_percentage_24h | number:'1.2-2' }}%
+      </div>
+    </div>
+  </div>
+
+  <!-- LOSER -->
+  <div class="mover-card loser">
+    <div class="mover-header">
+      <span class="badge danger">▼ Top Loser</span>
+    </div>
+
+    <div class="mover-body">
+      <div class="crypto-name">
+        {{ loser?.name }}
+        <span class="symbol">({{ loser?.symbol | uppercase }})</span>
+      </div>
+
+      <div class="price">
+        ${{ loser?.current_price | number:'1.0-2' }}
+      </div>
+
+      <div class="change negative">
+        ▼ {{ loser?.price_change_percentage_24h | number:'1.2-2' }}%
+      </div>
+    </div>
+  </div>
+</div>
