@@ -1,0 +1,28 @@
+# ======================
+# Python / Django
+# ======================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+db.sqlite3
+staticfiles/
+media/
+
+venv/
+env/
+
+# ======================
+# Angular / Node
+# ======================
+node_modules/
+dist/
+
+# ======================
+# IDE / OS
+# ======================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
