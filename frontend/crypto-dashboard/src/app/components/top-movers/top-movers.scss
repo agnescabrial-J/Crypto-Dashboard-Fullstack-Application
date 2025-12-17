@@ -1,0 +1,35 @@
+.mover-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* LABEL */
+.status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.status.gain {
+  color: #10b981; /* GREEN */
+}
+
+.status.loss {
+  color: #ef4444; /* RED */
+}
+
+/* CHANGE */
+.change.positive {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.change.negative {
+  color: #ef4444;
+  font-weight: 600;
+}
+
