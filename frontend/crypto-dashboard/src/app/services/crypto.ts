@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class CryptoService {
 
   private apiUrl = 'http://127.0.0.1:8000/api';
@@ -23,12 +25,14 @@ export class CryptoService {
       .pipe(tap(data => this.cache.set(key, data)));
   }
 
-  // ✅ ADD THESE
   getTopGainer(): Observable<any> {
+    console.log("test1234567");
+    
     return this.http.get(`${this.apiUrl}/top-gainer/`);
   }
 
   getTopLoser(): Observable<any> {
+      console.log("yetdfcvhdsc");
     return this.http.get(`${this.apiUrl}/top-loser/`);
   }
 }

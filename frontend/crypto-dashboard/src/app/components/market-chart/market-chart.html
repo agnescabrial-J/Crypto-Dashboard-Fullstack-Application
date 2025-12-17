@@ -8,22 +8,25 @@
         <div class="filter-bar">
   <div class="filter-group">
     <label>Cryptocurrency</label>
-    <select class="form-select" [(ngModel)]="selectedCoin" (change)="loadChart()">
-      <option value="bitcoin">Bitcoin</option>
-      <option value="ethereum">Ethereum</option>
-      <option value="solana">Solana</option>
-    </select>
+    <select class="form-select w-auto"  [(ngModel)]="selectedCoin"
+    (change)="onCoinChange()"
+  >
+    <option value="bitcoin">Bitcoin</option>
+    <option value="ethereum">Ethereum</option>
+    <option value="solana">Solana</option>
+  </select>
   </div>
 
   <div class="filter-group">
     <label>Time Range</label>
     <div class="time-chips">
-      <button
-        *ngFor="let d of [7,14,30]"
-        (click)="days=d; loadChart()"
-        [class.active]="days === d">
-        {{ d }}D
-      </button>
+    <button
+      class="btn btn-outline-primary"
+      *ngFor="let d of [7,14,30]"
+      (click)="onDaysChange(d)"
+    >
+      {{ d }}D
+    </button>
     </div>
   </div>
 </div>
@@ -31,9 +34,10 @@
       </div>
     </div>
 
-    <div class="chart-card">
+    <div class="chart-wrapper">
   <canvas id="priceChart"></canvas>
 </div>
+
 
 
   </div>

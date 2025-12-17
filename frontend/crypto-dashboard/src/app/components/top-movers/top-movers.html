@@ -1,45 +1,39 @@
-<div class="movers-container">
+<div class="movers-container compact">
+
   <!-- GAINER -->
-  <div class="mover-card gainer">
-    <div class="mover-header">
-      <span class="badge success">▲ Top Gainer</span>
+  <div class="mover-row">
+    <span class="status gain">GAINER</span>
+
+    <div class="info">
+      <span class="name">{{ gainer?.name }}</span>
+      <span class="symbol">{{ gainer?.symbol | uppercase }}</span>
     </div>
 
-    <div class="mover-body">
-      <div class="crypto-name">
-        {{ gainer?.name }}
-        <span class="symbol">({{ gainer?.symbol | uppercase }})</span>
-      </div>
+    <div class="price">
+      ${{ gainer?.high_24h | number:'1.0-2' }}
+    </div>
 
-      <div class="price">
-        ${{ gainer?.current_price | number:'1.0-2' }}
-      </div>
-
-      <div class="change positive">
-        ▲ {{ gainer?.price_change_percentage_24h | number:'1.2-2' }}%
-      </div>
+    <div class="change positive">
+      +{{ gainer?.changePercent  | number:'1.2-2' }}%
     </div>
   </div>
 
   <!-- LOSER -->
-  <div class="mover-card loser">
-    <div class="mover-header">
-      <span class="badge danger">▼ Top Loser</span>
+  <div class="mover-row">
+    <span class="status loss">LOSER</span>
+
+    <div class="info">
+      <span class="name">{{ loser?.name }}</span>
+      <span class="symbol">{{ loser?.symbol | uppercase }}</span>
     </div>
 
-    <div class="mover-body">
-      <div class="crypto-name">
-        {{ loser?.name }}
-        <span class="symbol">({{ loser?.symbol | uppercase }})</span>
-      </div>
+    <div class="price">
+      ${{ loser?.low_24h | number:'1.0-2' }}
+    </div>
 
-      <div class="price">
-        ${{ loser?.current_price | number:'1.0-2' }}
-      </div>
-
-      <div class="change negative">
-        ▼ {{ loser?.price_change_percentage_24h | number:'1.2-2' }}%
-      </div>
+    <div class="change negative">
+      {{ loser?.changePercent  | number:'1.2-2' }}%
     </div>
   </div>
+
 </div>
